@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="assets">
+      <UniqueIdentifier>{12267571-0016-46d0-a3b8-695181157816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{9b1b961f-6ffa-4c39-bae8-f771d8d463a3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ECS\ECS.cpp" />
+    <ClCompile Include="src\Collision.cpp" />
+    <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\GameObject.cpp" />
+    <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\TextureMenager.cpp" />
+    <ClCompile Include="src\Vector2D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ECS\ECS.h" />
+    <ClInclude Include="src\ECS\Animation.h" />
+    <ClInclude Include="src\ECS\Components.h" />
+    <ClInclude Include="src\ECS\KeyboardController.h" />
+    <ClInclude Include="src\ECS\SpriteComponent.h" />
+    <ClInclude Include="src\ECS\TileComponent.h" />
+    <ClInclude Include="src\ECS\TransformComponent.h" />
+    <ClInclude Include="src\ECS\ColliderComponent.h" />
+    <ClInclude Include="src\Collision.h" />
+    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\GameObject.h" />
+    <ClInclude Include="src\Map.h" />
+    <ClInclude Include="src\TextureMenager.h" />
+    <ClInclude Include="src\Vector2D.h" />
+  </ItemGroup>
+</Project>
