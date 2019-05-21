@@ -15,4 +15,23 @@ public:
 	{
 		tag = t;
 	}
+
+	void init() override
+	{
+		if (!entity->hasComponents<TransformComponent>())
+		{
+			entity->addComponent<TransformComponent>();
+		}
+		transform = &entity->getComponent<TransformComponent>();
+
+		Game::colliders.push_back(this);
+	}
+
+	void update() override
+	{
+		collider.x = static_cast<int>(transform->position.x);
+		collider.y = static_cast<int>(transform->position.y);
+		collider.h = transform->height*transform->scale;
+		collider.w = transform->width*transform->scale;
+	}
 };
