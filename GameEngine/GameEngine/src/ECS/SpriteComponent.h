@@ -19,6 +19,26 @@ private:
 	
 public:
 
+	SpriteComponent(const char *path, bool isAnimated)
+	{
+		animated = isAnimated;
+
+		Animation idle = Animation(0, 4, 170);
+		Animation walk = Animation(1, 3, 180);
+
+		animations.emplace("Idle", idle);
+		animations.emplace("Walk", walk);
+
+		Play("Idle");
+
+		setTex(path);
+	}
+
+	~SpriteComponent()
+	{
+		SDL_DestroyTexture(texture);
+	}
+
 	void setTex(const char *path)
 	{
 		texture = TextureMenager::LoadTexture(path);
