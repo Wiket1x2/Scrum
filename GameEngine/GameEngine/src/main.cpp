@@ -1,17 +1,20 @@
-#include "SDL.h"
+#include "game.h"
 
-int main(int argc, char* argv[])
+Game *game = nullptr;
+
+int main(int argc, char *argv[])
 {
-	SDL_Init(SDL_INIT_EVERYTHING);
-	SDL_Window* window = SDL_CreateWindow("pierwsze okno!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 400, SDL_WINDOW_SHOWN);
-	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+	const int FPS = 60;
+	const int frameDelay = 1000 / FPS;
 
-	SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+	Uint32 frameStart;
+	int frameTime;
 
-	SDL_RenderClear(renderer);
-	SDL_RenderPresent(renderer);
+	game = new Game();
 
-	SDL_Delay(5000);
+	game->init("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false);
+
+	game->clean();
 
 	return 0;
 }
