@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Components.h"
 #include "SDL.h"
 #include "../TextureMenager.h"
@@ -16,8 +14,21 @@ private:
 	bool animated = false;
 	int frames = 0;
 	int speed = 100;
-	
+
 public:
+	int animIndex = 0;
+
+	std::map<const char*, Animation> animations;
+
+	SDL_RendererFlip spriteFlip = SDL_FLIP_NONE;
+
+
+	SpriteComponent() = default;
+
+	SpriteComponent(const char *path)
+	{
+		setTex(path);
+	}
 
 	SpriteComponent(const char *path, bool isAnimated)
 	{
