@@ -82,7 +82,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 
 	Map::LoadMap("assets/map.map", 25, 25);
 
-	stone.addComponent<TransformComponent>(520, 100, 2);
+	stone.addComponent<TransformComponent>(520, 40, 5);
 	stone.addComponent<SpriteComponent>("assets/stone.png", false);
 	stone.addGroup(groupPlayers);
 
