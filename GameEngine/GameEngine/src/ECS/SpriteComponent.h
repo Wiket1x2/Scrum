@@ -45,6 +45,21 @@ public:
 		setTex(path);
 	}
 
+	SpriteComponent(const char *path, const char* animName)
+	{
+		animated = true;
+
+		Animation idle = Animation(0, 4, 170);
+		Animation walk = Animation(1, 3, 180);
+
+		animations.emplace("Idle", idle);
+		animations.emplace("Walk", walk);
+
+		Play(animName);
+
+		setTex(path);
+	}
+
 	~SpriteComponent()
 	{
 		SDL_DestroyTexture(texture);

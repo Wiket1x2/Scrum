@@ -20,7 +20,6 @@ bool Game::isRunning = false;
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
 auto& stone(manager.addEntity());
-auto& ninja(manager.addEntity());
 auto& campfire(manager.addEntity());
 
 const char* map_file = "assets/MapTiles.png";
@@ -34,10 +33,6 @@ enum groupLabels :std::size_t
 	groupTerrain
 };
 
-auto& tiles(manager.getGroup(groupMap));
-auto& players(manager.getGroup(groupPlayers));
-auto& terrain(manager.getGroup(groupTerrain));
-auto& enemies(manager.getGroup(groupEnemies));
 
 Game::Game()
 {}
@@ -84,18 +79,18 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 
 	stone.addComponent<TransformComponent>(520, 40, 5);
 	stone.addComponent<SpriteComponent>("assets/stone.png", false);
-	stone.addGroup(groupPlayers);
+	stone.addGroup(groupTerrain);
 
 	campfire.addComponent<TransformComponent>(620, 120, 3);
 	campfire.addComponent<SpriteComponent>("assets/campfire.png", true);
-	campfire.addGroup(groupPlayers);
+	campfire.addGroup(groupTerrain);
 
 	player.addComponent<TransformComponent>(3);
 	player.addComponent<SpriteComponent>("assets/player_animations.png", true);
 	player.addComponent<KeyboardController>();
 	player.addComponent<ColliderComponent>("player");
 	player.addGroup(groupPlayers);
-	
+
 }
 
 void Game::handleEvents()
@@ -136,6 +131,10 @@ void Game::update()
 	}*/
 }
 
+auto& tiles(manager.getGroup(groupMap));
+auto& players(manager.getGroup(groupPlayers));
+auto& enemies(manager.getGroup(groupEnemies));
+auto& terrain(manager.getGroup(groupTerrain));
 
 
 void Game::render()
@@ -146,6 +145,12 @@ void Game::render()
 	{
 		t->draw();
 	}
+
+	for (auto t : terrain)
+	{
+		t->draw();
+	}
+
 	for (auto p : players)
 	{
 		p->draw();
