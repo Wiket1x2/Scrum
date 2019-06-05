@@ -19,6 +19,7 @@ bool Game::isRunning = false;
 
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
+auto& stone(manager.addEntity());
 
 const char* map_file = "assets/MapTiles.png";
 
@@ -27,12 +28,14 @@ enum groupLabels :std::size_t
 	groupMap,
 	groupPlayers,
 	groupEnemies,
-	groupColliders
+	groupColliders,
+	groupTerrain
 };
 
 auto& tiles(manager.getGroup(groupMap));
 auto& players(manager.getGroup(groupPlayers));
 auto& enemies(manager.getGroup(groupEnemies));
+auto& terrain(manager.getGroup(groupTerrain));
 
 Game::Game()
 {}
@@ -82,6 +85,11 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	player.addComponent<KeyboardController>();
 	player.addComponent<ColliderComponent>("player");
 	player.addGroup(groupPlayers);
+
+	stone.addComponent<TransformComponent>(100, 100, 10);
+	stone.addComponent<SpriteComponent>("assets/stone.png",false);
+
+	stone.addGroup(groupTerrain);
 }
 
 void Game::handleEvents()

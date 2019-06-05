@@ -29,9 +29,9 @@ public:
 
 	TransformComponent(float x, float y, int sc)
 	{
-		position.x = x;
-		position.y = y;
-		scale = sc;
+		position.x = x; //w dol 
+		position.y = y;// w prawo
+		scale = sc; //2 3 0,5 1
 	}
 
 	TransformComponent(float x, float y, int h, int w, int sc)
