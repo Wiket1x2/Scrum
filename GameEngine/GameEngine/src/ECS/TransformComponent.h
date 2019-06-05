@@ -27,10 +27,11 @@ public:
 		scale = sc;
 	}
 
-	TransformComponent(float x, float y)
+	TransformComponent(float x, float y, int sc)
 	{
 		position.x = x;
 		position.y = y;
+		scale = sc;
 	}
 
 	TransformComponent(float x, float y, int h, int w, int sc)
