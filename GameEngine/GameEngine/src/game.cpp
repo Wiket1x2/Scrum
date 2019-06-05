@@ -36,8 +36,8 @@ enum groupLabels :std::size_t
 
 auto& tiles(manager.getGroup(groupMap));
 auto& players(manager.getGroup(groupPlayers));
-auto& enemies(manager.getGroup(groupEnemies));
 auto& terrain(manager.getGroup(groupTerrain));
+auto& enemies(manager.getGroup(groupEnemies));
 
 Game::Game()
 {}
@@ -95,12 +95,6 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	player.addComponent<KeyboardController>();
 	player.addComponent<ColliderComponent>("player");
 	player.addGroup(groupPlayers);
-
-	ninja.addComponent<TransformComponent>(100, 100, 3);
-	ninja.addComponent<SpriteComponent>("assets/ninjaplayer.png", true);
-	ninja.addGroup(groupPlayers);
-
-	
 	
 }
 
