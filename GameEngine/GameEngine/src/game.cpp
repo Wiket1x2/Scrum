@@ -21,6 +21,7 @@ auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
 auto& stone(manager.addEntity());
 auto& ninja(manager.addEntity());
+auto& campfire(manager.addEntity());
 
 const char* map_file = "assets/MapTiles.png";
 
@@ -81,19 +82,25 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 
 	Map::LoadMap("assets/map.map", 25, 25);
 
+	stone.addComponent<TransformComponent>(520, 100, 2);
+	stone.addComponent<SpriteComponent>("assets/stone.png", false);
+	stone.addGroup(groupPlayers);
+
+	campfire.addComponent<TransformComponent>(620, 120, 3);
+	campfire.addComponent<SpriteComponent>("assets/campfire.png", true);
+	campfire.addGroup(groupPlayers);
+
 	player.addComponent<TransformComponent>(3);
 	player.addComponent<SpriteComponent>("assets/player_animations.png", true);
 	player.addComponent<KeyboardController>();
 	player.addComponent<ColliderComponent>("player");
 	player.addGroup(groupPlayers);
 
-	stone.addComponent<TransformComponent>(520, 100, 2);
-	stone.addComponent<SpriteComponent>("assets/stone.png",false);
-	stone.addGroup(groupPlayers);
-	
 	ninja.addComponent<TransformComponent>(100, 100, 3);
 	ninja.addComponent<SpriteComponent>("assets/ninjaplayer.png", true);
 	ninja.addGroup(groupPlayers);
+
+	
 	
 }
 
