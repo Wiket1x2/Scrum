@@ -25,6 +25,8 @@ auto& tree(manager.addEntity());
 auto& tent(manager.addEntity());
 auto& waves2(manager.addEntity());
 auto& ship(manager.addEntity());
+auto& jacsparrow(manager.addEntity());
+auto& pirateship(manager.addEntity());
 
 const char* map_file = "assets/MapTiles.png";
 
@@ -128,6 +130,14 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	ship.addComponent<TransformComponent>(500, 180, 7);
 	ship.addComponent<SpriteComponent>("assets/ship.png", false);
 	ship.addGroup(groupTerrain);
+
+	jacsparrow.addComponent<TransformComponent>(1250, 200, 3);
+	jacsparrow.addComponent<SpriteComponent>("assets/jacsparrow.png", false);
+	jacsparrow.addGroup(groupTerrain);
+
+	pirateship.addComponent<TransformComponent>(1320, 50, 8);
+	pirateship.addComponent<SpriteComponent>("assets/piratesship.png", false);
+	pirateship.addGroup(groupTerrain);
 
 	player.addComponent<TransformComponent>(3);
 	player.addComponent<SpriteComponent>("assets/player_animations.png", true);
