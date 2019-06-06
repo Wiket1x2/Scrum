@@ -21,6 +21,10 @@ auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
 auto& stone(manager.addEntity());
 auto& campfire(manager.addEntity());
+auto& tree(manager.addEntity());
+auto& tent(manager.addEntity());
+auto& waves2(manager.addEntity());
+auto& ship(manager.addEntity());
 
 const char* map_file = "assets/MapTiles.png";
 
@@ -85,11 +89,53 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	campfire.addComponent<SpriteComponent>("assets/campfire.png", true);
 	campfire.addGroup(groupTerrain);
 
+	tree.addComponent<TransformComponent>(640, 15, 5);
+	tree.addComponent<SpriteComponent>("assets/tree.png", false);
+	tree.addGroup(groupTerrain);
+
+	tent.addComponent<TransformComponent>(750, 75, 5);
+	tent.addComponent<SpriteComponent>("assets/tent.png", false);
+	tent.addGroup(groupTerrain);
+
+	tree.addComponent<TransformComponent>(1000, 150, 5);
+	tree.addComponent<SpriteComponent>("assets/tree.png", false);
+	tree.addGroup(groupTerrain);
+
+	tree.addComponent<TransformComponent>(800, 340, 5);
+	tree.addComponent<SpriteComponent>("assets/tree.png", false);
+	tree.addGroup(groupTerrain);
+
+	waves2.addComponent<TransformComponent>(140, 120, 3);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addGroup(groupTerrain);
+
+	waves2.addComponent<TransformComponent>(450, 300, 4);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addGroup(groupTerrain);
+
+	waves2.addComponent<TransformComponent>(10, 230, 3);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addGroup(groupTerrain);
+
+	waves2.addComponent<TransformComponent>(60, 300, 4);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addGroup(groupTerrain);
+
+	waves2.addComponent<TransformComponent>(190, 600, 3);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addGroup(groupTerrain);
+
+	ship.addComponent<TransformComponent>(500, 180, 7);
+	ship.addComponent<SpriteComponent>("assets/ship.png", false);
+	ship.addGroup(groupTerrain);
+
 	player.addComponent<TransformComponent>(3);
 	player.addComponent<SpriteComponent>("assets/player_animations.png", true);
 	player.addComponent<KeyboardController>();
 	player.addComponent<ColliderComponent>("player");
 	player.addGroup(groupPlayers);
+
+
 
 }
 
