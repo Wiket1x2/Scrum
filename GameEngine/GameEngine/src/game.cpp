@@ -109,24 +109,24 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	tree.addComponent<SpriteComponent>("assets/tree.png", false);
 	tree.addGroup(groupTerrain);
 
-	waves2.addComponent<TransformComponent>(140, 120, 3);
-	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addComponent<TransformComponent>(140, 120, 2);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", "Waves");
 	waves2.addGroup(groupTerrain);
 
-	waves2.addComponent<TransformComponent>(450, 300, 4);
-	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addComponent<TransformComponent>(450, 300, 3);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", "Waves");
 	waves2.addGroup(groupTerrain);
 
-	waves2.addComponent<TransformComponent>(10, 230, 3);
-	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addComponent<TransformComponent>(10, 230, 2);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", "Waves");
 	waves2.addGroup(groupTerrain);
 
-	waves2.addComponent<TransformComponent>(60, 300, 4);
-	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addComponent<TransformComponent>(60, 300, 3);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", "Waves");
 	waves2.addGroup(groupTerrain);
 
-	waves2.addComponent<TransformComponent>(190, 600, 3);
-	waves2.addComponent<SpriteComponent>("assets/waves2.png", true);
+	waves2.addComponent<TransformComponent>(190, 600, 2);
+	waves2.addComponent<SpriteComponent>("assets/waves2.png", "Waves");
 	waves2.addGroup(groupTerrain);
 
 	ship.addComponent<TransformComponent>(500, 180, 7);
