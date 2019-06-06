@@ -51,9 +51,11 @@ public:
 
 		Animation idle = Animation(0, 4, 170);
 		Animation walk = Animation(1, 3, 180);
+		Animation fish = Animation(0, 8, 170);
 
 		animations.emplace("Idle", idle);
 		animations.emplace("Walk", walk);
+		animations.emplace("Fish", fish);
 
 		Play(animName);
 

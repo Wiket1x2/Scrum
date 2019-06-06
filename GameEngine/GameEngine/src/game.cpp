@@ -17,6 +17,7 @@ std::vector<ColliderComponent*> Game::colliders;
 
 bool Game::isRunning = false;
 
+auto& fish(manager.addEntity());
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
 auto& stone(manager.addEntity());
@@ -143,6 +144,10 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	pirate2.addComponent<TransformComponent>(1350, 250, 4);
 	pirate2.addComponent<SpriteComponent>("assets/pirate2.png", false);
 	pirate2.addGroup(groupTerrain);
+
+	fish.addComponent<TransformComponent>(130, 300, 2);
+	fish.addComponent<SpriteComponent>("assets/fish.png", "Fish");
+	fish.addGroup(groupEnemies);
 
 	player.addComponent<TransformComponent>(3);
 	player.addComponent<SpriteComponent>("assets/player_animations.png", true);
