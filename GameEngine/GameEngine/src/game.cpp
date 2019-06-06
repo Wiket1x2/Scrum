@@ -27,6 +27,7 @@ auto& waves2(manager.addEntity());
 auto& ship(manager.addEntity());
 auto& jacsparrow(manager.addEntity());
 auto& pirateship(manager.addEntity());
+auto& pirate2(manager.addEntity());
 
 const char* map_file = "assets/MapTiles.png";
 
@@ -138,6 +139,10 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	pirateship.addComponent<TransformComponent>(1320, 50, 8);
 	pirateship.addComponent<SpriteComponent>("assets/piratesship.png", false);
 	pirateship.addGroup(groupTerrain);
+
+	pirate2.addComponent<TransformComponent>(1350, 250, 4);
+	pirate2.addComponent<SpriteComponent>("assets/pirate2.png", false);
+	pirate2.addGroup(groupTerrain);
 
 	player.addComponent<TransformComponent>(3);
 	player.addComponent<SpriteComponent>("assets/player_animations.png", true);
