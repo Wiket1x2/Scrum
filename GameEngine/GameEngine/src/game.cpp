@@ -29,6 +29,7 @@ auto& ship(manager.addEntity());
 auto& jacsparrow(manager.addEntity());
 auto& pirateship(manager.addEntity());
 auto& pirate2(manager.addEntity());
+auto& troll(manager.addEntity());
 
 const char* map_file = "assets/MapTiles.png";
 
@@ -155,7 +156,17 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	player.addComponent<ColliderComponent>("player");
 	player.addGroup(groupPlayers);
 
+	troll.addComponent<TransformComponent>(500, 900, 4);
+	troll.addComponent<SpriteComponent>("assets/troll.png", "Troll");
+	troll.addGroup(groupEnemies);
 
+	troll.addComponent<TransformComponent>(600, 865, 3);
+	troll.addComponent<SpriteComponent>("assets/corpse.png", false);
+	troll.addGroup(groupEnemies);
+
+	troll.addComponent<TransformComponent>(600, 930, 3);
+	troll.addComponent<SpriteComponent>("assets/chest.png", false);
+	troll.addGroup(groupEnemies);
 
 }
 
