@@ -53,7 +53,7 @@ public:
 		Animation walk = Animation(1, 3, 180);
 		Animation fish = Animation(0, 8, 170);
 		Animation waves = Animation(0, 6, 170);
-		Animation troll = Animation(0, 2, 180);
+		Animation troll = Animation(0, 2, 300);
 
 		animations.emplace("Idle", idle);
 		animations.emplace("Walk", walk);

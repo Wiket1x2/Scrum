@@ -158,15 +158,11 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 
 	troll.addComponent<TransformComponent>(500, 900, 4);
 	troll.addComponent<SpriteComponent>("assets/troll.png", "Troll");
-	troll.addGroup(groupEnemies);
-
 	troll.addComponent<TransformComponent>(600, 865, 3);
 	troll.addComponent<SpriteComponent>("assets/corpse.png", false);
-	troll.addGroup(groupEnemies);
-
 	troll.addComponent<TransformComponent>(600, 930, 3);
 	troll.addComponent<SpriteComponent>("assets/chest.png", false);
-	troll.addGroup(groupEnemies);
+	troll.addGroup(groupTerrain);
 
 }
 

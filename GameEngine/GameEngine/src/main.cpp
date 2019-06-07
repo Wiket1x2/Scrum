@@ -12,7 +12,7 @@ int main(int argc, char *argv[])  //wyglad fukncji main w VS dla bibliotek
 
 	game = new Game(); //wskaznikowi przypisujemy pamiec na obiekt game
 
-	game->init("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false); //wywolujemy funckje init z obiektu game - przyjmuje nazwe, pozycje na erkanie , szerokosc okna , true/false - fullscreen
+	game->init("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 1024, false); //wywolujemy funckje init z obiektu game - przyjmuje nazwe, pozycje na erkanie , szerokosc okna , true/false - fullscreen
 
 	while (game->running()) //nieskonczona petla - nasz program : jesli isrunnng==True
 	{
